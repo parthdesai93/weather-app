@@ -9,7 +9,8 @@ var HomeContainer = React.createClass({
 	},
   getInitialState: function() {
     return {
-      cityName:''
+      cityName:'',
+      foercastData: []
     }
   },
   handleUpdateCity: function(e){
@@ -17,8 +18,21 @@ var HomeContainer = React.createClass({
       cityName: e.target.value
     })
   },
-  handleSubmitCity: function(e){
-    ForecastHelper.getWeatherInfo(this.state.cityName);
+  componentDidMount: function() {
+    ForecastHelper.getWeatherInfo(this.state.cityName)
+      .then(function(data){
+        this.setState({
+          forecastData: data
+        })
+      }.bind(this))
+  },
+  handleSubmitCity: function(){
+    this.context.router.push({
+      pathname: '/forecast',
+      state: {
+        forecastData: this.state.forecastData
+      }
+    })
   },
   render: function(){
     return(

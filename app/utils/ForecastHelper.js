@@ -6,14 +6,15 @@ var secrets = require('../secrets/Secrets');
 var APP_ID = secrets.open_weather_api_key;
 
 function getWeather(cityName){
-  return axios.get('http://api.openweathermap.org/data/2.5/weather?q='+ cityName + '&appid=' + APP_ID);
+  return axios.get('http://api.openweathermap.org/data/2.5/forecast?q='+ cityName + '&appid=' + APP_ID + '&units=metric');
 }
 
 var helpers = {
   getWeatherInfo: function(cityName){
+    console.log("City Name" + cityName)
     return getWeather(cityName)
       .then(function(info){
-        console.log(info.data)
+        return info.data
       })
   }
 }

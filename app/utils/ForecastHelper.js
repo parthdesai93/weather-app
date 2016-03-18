@@ -11,7 +11,6 @@ function getWeather(cityName){
 
 var helpers = {
   getWeatherInfo: function(cityName){
-    console.log("City Name" + cityName)
     return getWeather(cityName)
       .then(function(info){
         return info.data

@@ -1,7 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var Home = require('../components/Home');
-var ForecastHelper = require('../utils/ForecastHelper');
+
 
 var HomeContainer = React.createClass({
   contextTypes: {
@@ -18,14 +18,6 @@ var HomeContainer = React.createClass({
       cityName: e.target.value
     })
   },
-  // componentDidUpdate: function() {
-  //   ForecastHelper.getWeatherInfo(this.state.cityName)
-  //     .then(function(data){
-  //       this.setState({
-  //         forecastData: data
-  //       })
-  //     }.bind(this))
-  // },
   handleSubmitCity: function(){
     this.context.router.push({
       pathname: '/forecast',

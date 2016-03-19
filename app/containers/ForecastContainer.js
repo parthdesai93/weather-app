@@ -1,12 +1,14 @@
 var React = require('react');
 var PorpTypes = React.PropTypes;
 var ForecastHelper = require('../utils/ForecastHelper');
+var Forecast = require('../components/Forecast');
 
 
 var ForecastContainer = React.createClass({
   getInitialState: function() {
     return {
       cityName : this.props.location.state.cityName,
+      isLoading: true,
       forecastData: []
     }
   },
@@ -15,16 +17,16 @@ var ForecastContainer = React.createClass({
     ForecastHelper.getWeatherInfo(this.state.cityName)
       .then(function(data){
         that.setState({
+          isLoading: false,
           forecastData: data
         })
-      })
-      .then(function(){
-        console.log(that.state.forecastData)
       })
   },
   render: function() {
     return(
-      <p> ForecastContainer </p>
+      <Forecast
+        forecastData={this.state.forecastData.list}
+        isLoading={this.state.isLoading}/>
 
     )
   }

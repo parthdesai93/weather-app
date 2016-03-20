@@ -10,6 +10,7 @@ function Forecast(props){
           {console.log(props)}
           <h1>{props.cityName}</h1>
           <p> {props.forecastData[0].description}</p>
+          <p> {props.forecastData[0].day} , {props.forecastData[0].month + ' ' + props.forecastData[0].date} </p>
         </div>
   )
 }

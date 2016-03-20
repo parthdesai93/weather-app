@@ -25,8 +25,9 @@ var ForecastContainer = React.createClass({
   render: function() {
     return(
       <Forecast
-        forecastData={this.state.forecastData.list}
-        isLoading={this.state.isLoading}/>
+        forecastData={this.state.forecastData}
+        isLoading={this.state.isLoading}
+        cityName={this.state.cityName}/>
 
     )
   }

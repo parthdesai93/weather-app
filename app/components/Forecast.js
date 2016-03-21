@@ -32,13 +32,13 @@ function Forecast(props){
               </div>
             </div>
             <div className="row">
-              <div onClick={props.handleClick.bind(null,4)}>
+              <div onClick={props.handleClick.bind(null,3)}>
                 <div className="col-xs-12 col-sm-4">
                   <h2> {props.forecastData[3].description}</h2>
                   <h3> {props.forecastData[3].day} , {props.forecastData[3].month + ' ' + props.forecastData[3].date} </h3>
                 </div>
               </div>
-              <div onClick={props.handleClick.bind(null,5)}>
+              <div onClick={props.handleClick.bind(null,4)}>
                 <div className="col-xs-12 col-sm-4 col-sm-offset-4">
                   <h2> {props.forecastData[4].description}</h2>
                   <h3> {props.forecastData[4].day} , {props.forecastData[4].month + ' ' + props.forecastData[4].date} </h3>

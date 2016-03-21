@@ -15,7 +15,7 @@ var routes = (
     <Route path='/' component={Main} >
        <IndexRoute component={HomeContainer} />
        <Route path="/forecast" component={ForecastContainer} />
-       <Route path="/detail" component={DetailWeatherContainer} />
+       <Route path="/detail"   component={DetailWeatherContainer} />
     </Route>
   </Router>
 );

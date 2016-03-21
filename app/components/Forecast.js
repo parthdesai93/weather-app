@@ -7,7 +7,6 @@ function Forecast(props){
     props.isLoading === true
       ? <div> Loading </div>
       : <div>
-          {console.log(props)}
           <div className="container" >
             <div className="row">
               <h1 className="text-center">{props.cityName}</h1>

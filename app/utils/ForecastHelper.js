@@ -47,8 +47,6 @@ var helpers = {
   getWeatherInfo: function(cityName){
     return getWeather(cityName)
       .then(function(info){
-        console.log('info');
-        console.log(info);
         return parseData(info.data.list)
       })
   }

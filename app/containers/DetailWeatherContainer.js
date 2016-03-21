@@ -1,10 +1,12 @@
 var React = require('react');
+var DetailWeather = require('../components/DetailWeather');
 
 var DetailWeatherContainer = React.createClass({
   render: function() {
     return(
-      <div> DetailWeatherContainer
-      {console.log(this.props)}</div>
+      <DetailWeather
+      weather={this.props.location.state.weather}
+      city={this.props.location.state.city}/>
     )
   }
 })

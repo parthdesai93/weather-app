@@ -29,7 +29,8 @@ var ForecastContainer = React.createClass({
     this.context.router.push({
       pathname: '/detail',
       state: {
-        weather : this.state.forecastData[index]
+        weather : this.state.forecastData[index],
+        city: this.state.cityName
       }
     })
   },

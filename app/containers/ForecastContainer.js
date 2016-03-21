@@ -5,6 +5,9 @@ var Forecast = require('../components/Forecast');
 
 
 var ForecastContainer = React.createClass({
+  contextTypes: {
+		router: React.PropTypes.object.isRequired
+	},
   getInitialState: function() {
     return {
       cityName : this.props.location.state.cityName,
@@ -22,12 +25,21 @@ var ForecastContainer = React.createClass({
         })
       })
   },
+  handleClick: function(index) {
+    this.context.router.push({
+      pathname: '/detail',
+      state: {
+        weather : this.state.forecastData[index]
+      }
+    })
+  },
   render: function() {
     return(
       <Forecast
         forecastData={this.state.forecastData}
         isLoading={this.state.isLoading}
-        cityName={this.state.cityName}/>
+        cityName={this.state.cityName}
+        handleClick={this.handleClick}/>
 
     )
   }
